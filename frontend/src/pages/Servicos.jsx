@@ -3,6 +3,18 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { getServicos } from '../services/api'
 
+const EMOJIS = ['🏢','📊','📋','👥','⚖️','📈','💼','🗂️']
+
+const ESTATICOS = [
+  { slug: 'abertura-empresas',     titulo: 'Abertura e Regularização de Empresas',  descricao_curta: 'Abertura de MEI, ME e LTDA com toda a documentação e registro junto aos órgãos competentes.', descricao_completa: 'Cuidamos de todo o processo de abertura, alteração e encerramento de empresas.' },
+  { slug: 'contabilidade',          titulo: 'Contabilidade para MEI, ME e LTDA',      descricao_curta: 'Escrituração contábil completa, balancetes, balanços e demonstrações financeiras.',              descricao_completa: 'Escrituração contábil mensal, apuração de resultados e relatórios gerenciais.' },
+  { slug: 'imposto-de-renda',       titulo: 'Declaração de Imposto de Renda',         descricao_curta: 'IR Pessoa Física e Jurídica, com análise de restituição e orientação fiscal completa.',          descricao_completa: 'Preparação e entrega da declaração de IR com maximização de restituição.' },
+  { slug: 'folha-pagamento',        titulo: 'Folha de Pagamento e Encargos',          descricao_curta: 'Processamento de folha, férias, 13º salário, FGTS, INSS e obrigações acessórias.',               descricao_completa: 'Gestão completa da folha de pagamento e encargos trabalhistas.' },
+  { slug: 'assessoria-fiscal',      titulo: 'Assessoria Fiscal e Tributária',         descricao_curta: 'Orientação fiscal, apuração de impostos e conformidade com as obrigações tributárias.',           descricao_completa: 'Planejamento e assessoria fiscal para redução legal da carga tributária.' },
+  { slug: 'escrituracao-contabil',  titulo: 'Escrituração Contábil',                  descricao_curta: 'Registro contábil preciso de todas as operações financeiras da sua empresa.',                      descricao_completa: 'Escrituração contábil de acordo com as normas do CFC e legislação vigente.' },
+  { slug: 'planejamento-tributario',titulo: 'Planejamento Tributário',                descricao_curta: 'Estratégias legais para reduzir impostos e enquadrar sua empresa no melhor regime.',               descricao_completa: 'Análise e escolha do melhor regime tributário para sua empresa.' },
+]
+
 export default function Servicos() {
   const [servicos, setServicos] = useState([])
   const [loading, setLoading]   = useState(true)
@@ -14,48 +26,63 @@ export default function Servicos() {
       .finally(() => setLoading(false))
   }, [])
 
+  const lista = servicos.length > 0 ? servicos : ESTATICOS
+
   return (
     <>
       <Helmet>
         <title>Serviços | Escritório Atlântica</title>
       </Helmet>
 
-      <section className="pt-32 pb-20 bg-gradient-to-br from-primary-900 to-primary-700 text-white text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Nossos Serviços</h1>
-          <p className="text-blue-200 text-lg">
-            Soluções jurídicas e contábeis completas para cada necessidade.
+      <section className="section-dark pt-36 pb-20 bg-dots">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="cyan-line mx-auto" />
+          <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-4">Nossos Serviços</h1>
+          <p className="font-body text-white/50 text-lg">
+            Soluções contábeis e fiscais completas para o crescimento do seu negócio.
           </p>
         </div>
       </section>
 
-      <section className="py-20 max-w-7xl mx-auto px-4">
-        {loading ? (
-          <div className="text-center text-gray-500 py-20">Carregando serviços...</div>
-        ) : servicos.length === 0 ? (
-          <div className="text-center py-20">
-            <p className="text-gray-500 mb-4">Nenhum serviço cadastrado ainda.</p>
-            <p className="text-sm text-gray-400">Adicione serviços via API: POST /api/servicos/</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {servicos.map(s => (
-              <div key={s.id} className="card group">
-                <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-primary-700 transition-colors">
-                  <span className="text-3xl">⚖️</span>
+      <section className="section-mid py-24 bg-grid">
+        <div className="max-w-7xl mx-auto px-6">
+          {loading ? (
+            <div className="text-center text-white/40 py-20">Carregando...</div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {lista.map((s, i) => (
+                <div key={s.slug || i} className="card-service group flex flex-col">
+                  <div className="text-3xl mb-4">{EMOJIS[i % EMOJIS.length]}</div>
+                  <h2 className="font-display text-white text-lg font-semibold mb-2 group-hover:text-brand-cyan transition-colors">
+                    {s.titulo}
+                  </h2>
+                  <p className="font-body text-white/50 text-sm leading-relaxed flex-grow mb-5">
+                    {s.descricao_curta}
+                  </p>
+                  {s.slug && (
+                    <Link to={`/servicos/${s.slug}`}
+                      className="text-brand-cyan text-xs font-semibold uppercase tracking-wider hover:underline self-start">
+                      Ver detalhes →
+                    </Link>
+                  )}
                 </div>
-                <h2 className="text-xl font-semibold text-primary-800 mb-2">{s.titulo}</h2>
-                <p className="text-gray-600 text-sm mb-5 leading-relaxed">{s.descricao_curta}</p>
-                <Link
-                  to={`/servicos/${s.slug}`}
-                  className="text-primary-700 font-medium text-sm hover:text-gold-500 transition-colors"
-                >
-                  Ver detalhes →
-                </Link>
-              </div>
-            ))}
-          </div>
-        )}
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-dark py-16 text-center">
+        <div className="max-w-2xl mx-auto px-6">
+          <h3 className="font-display text-2xl text-white font-bold mb-3">
+            Não encontrou o que procura?
+          </h3>
+          <p className="font-body text-white/50 mb-6">
+            Entre em contato e veja como podemos ajudar seu negócio.
+          </p>
+          <Link to="/contato" className="btn-primary">Falar com Especialista</Link>
+        </div>
       </section>
     </>
   )

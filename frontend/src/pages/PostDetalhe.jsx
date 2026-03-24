@@ -9,55 +9,49 @@ export default function PostDetalhe() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    getPost(slug)
-      .then(r => setPost(r.data))
-      .catch(() => {})
-      .finally(() => setLoading(false))
+    getPost(slug).then(r => setPost(r.data)).catch(() => {}).finally(() => setLoading(false))
   }, [slug])
 
-  if (loading) return <div className="pt-40 text-center text-gray-500">Carregando...</div>
+  if (loading) return <div className="section-dark min-h-screen pt-40 text-center text-white/40">Carregando...</div>
   if (!post) return (
-    <div className="pt-40 text-center">
-      <p className="text-gray-500 mb-4">Artigo não encontrado.</p>
-      <Link to="/blog" className="btn-primary">Voltar ao Blog</Link>
+    <div className="section-dark min-h-screen pt-40 text-center">
+      <p className="text-white/50 mb-6">Artigo não encontrado.</p>
+      <Link to="/blog" className="btn-outline">← Voltar ao Blog</Link>
     </div>
   )
 
   return (
     <>
-      <Helmet>
-        <title>{post.titulo} | Escritório Atlântica</title>
-      </Helmet>
+      <Helmet><title>{post.titulo} | Escritório Atlântica</title></Helmet>
 
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary-900 to-primary-700 text-white">
-        <div className="max-w-3xl mx-auto px-4">
-          <Link to="/blog" className="text-blue-200 text-sm hover:text-white mb-6 inline-block">
-            ← Voltar ao Blog
-          </Link>
+      <section className="section-dark pt-36 pb-16 bg-dots">
+        <div className="max-w-3xl mx-auto px-6">
+          <Link to="/blog" className="text-brand-cyan/60 text-sm hover:text-brand-cyan mb-6 inline-block">← Voltar ao Blog</Link>
           <div className="flex gap-2 mb-4 flex-wrap">
             {post.tags?.map(tag => (
-              <span key={tag} className="text-xs bg-white/20 px-3 py-1 rounded-full">{tag}</span>
+              <span key={tag} className="text-xs bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/20 px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
-          <h1 className="text-3xl md:text-4xl font-serif font-bold mb-4">{post.titulo}</h1>
-          <div className="flex items-center gap-4 text-blue-200 text-sm">
+          <h1 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">{post.titulo}</h1>
+          <div className="flex gap-4 text-white/40 text-sm font-body">
             <span>✍️ {post.autor}</span>
             <span>📅 {new Date(post.criado_em).toLocaleDateString('pt-BR')}</span>
           </div>
         </div>
       </section>
 
-      <section className="py-16 max-w-3xl mx-auto px-4">
-        {post.imagem_url && (
-          <img src={post.imagem_url} alt={post.titulo} className="w-full rounded-xl mb-10 shadow-lg" />
-        )}
-        <p className="text-xl text-gray-500 italic mb-8 border-l-4 border-gold-400 pl-4">{post.resumo}</p>
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed whitespace-pre-wrap">
-          {post.conteudo}
-        </div>
-        <div className="mt-12 p-6 bg-primary-50 rounded-xl text-center">
-          <p className="text-primary-800 font-semibold mb-3">Ficou com dúvidas? Nossa equipe pode ajudar.</p>
-          <Link to="/contato" className="btn-primary">Falar com Especialista</Link>
+      <section className="section-mid py-16">
+        <div className="max-w-3xl mx-auto px-6">
+          <p className="font-body text-brand-cyan/80 text-lg italic border-l-2 border-brand-cyan/40 pl-5 mb-10">
+            {post.resumo}
+          </p>
+          <div className="font-body text-white/70 leading-relaxed whitespace-pre-wrap text-base">
+            {post.conteudo}
+          </div>
+          <div className="mt-12 bg-brand-cyan/10 border border-brand-cyan/20 rounded-2xl p-6 text-center">
+            <p className="font-display text-white font-semibold mb-3">Ficou com dúvidas? Nossa equipe pode ajudar.</p>
+            <Link to="/contato" className="btn-primary">Falar com Especialista</Link>
+          </div>
         </div>
       </section>
     </>
