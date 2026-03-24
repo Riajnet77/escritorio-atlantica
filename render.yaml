@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: escritorio-atlantica-api
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    envVars:
+      - key: MONGODB_URL
+        sync: false
+      - key: DB_NAME
+        value: escritorio_atlantica
+      - key: SECRET_KEY
+        generateValue: true
+    healthCheckPath: /health
+    autoDeploy: true
