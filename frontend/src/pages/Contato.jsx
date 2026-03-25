@@ -72,7 +72,7 @@ export default function Contato() {
             <h2 className="font-display text-2xl text-white font-bold mb-8">Nossos Canais</h2>
             <div className="space-y-6">
               {[
-                { icon: '📍', t: 'Endereço',             v: 'Rua Emilio Dias Brandão, nº 257\nBairro Santa Izabel – Campo Grande, MS' },
+                { icon: '📍', t: 'Endereço',             v: 'Rua Emilio Dias Brandão, nº 257\nBairro Santa Izabel – Ponta Porã, MS' },
                 { icon: '📞', t: 'Telefone Fixo',         v: '(67) 3431-4383', href: 'tel:6734314383' },
                 { icon: '📱', t: 'WhatsApp',              v: '(67) 99975-2307\n(67) 99952-9701', href: 'https://wa.me/5567999752307' },
                 { icon: '✉️', t: 'E-mail',                v: 'escatlantica@gmail.com', href: 'mailto:escatlantica@gmail.com' },

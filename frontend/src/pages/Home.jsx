@@ -29,7 +29,7 @@ export default function Home() {
     <>
       <Helmet>
         <title>Escritório Atlântica | Contabilidade desde 1986</title>
-        <meta name="description" content="Escritório Atlântica – Contabilidade, assessoria fiscal e tributária em Campo Grande, MS. Mais de 38 anos de experiência." />
+        <meta name="description" content="Escritório Atlântica – Contabilidade, assessoria fiscal e tributária em Ponta Porã, MS. Mais de 38 anos de experiência." />
       </Helmet>
 
       {/* ══ HERO ══════════════════════════════════════════════════════════ */}
@@ -51,7 +51,7 @@ export default function Home() {
             <div className="flex items-center gap-3 mb-6 animate-fadeup">
               <div className="h-px w-10 bg-brand-cyan" />
               <span className="font-body text-brand-cyan text-xs tracking-[0.3em] uppercase font-semibold">
-                Desde 1986 · Campo Grande, MS
+                Desde 1986 · Ponta Porã, MS
               </span>
             </div>
 
@@ -165,7 +165,7 @@ export default function Home() {
             <div className="cyan-line" />
             <h2 className="heading-section">Por que escolher o Escritório Atlântica?</h2>
             <p className="font-body text-white/50 leading-relaxed mb-8">
-              Com mais de 38 anos de atuação em Campo Grande, somos referência em contabilidade
+              Com mais de 38 anos de atuação em Ponta Porã, somos referência em contabilidade
               para pequenas e médias empresas no Mato Grosso do Sul.
             </p>
             <ul className="space-y-5">

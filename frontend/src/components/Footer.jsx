@@ -62,7 +62,7 @@ export default function Footer() {
           <ul className="space-y-3 text-sm text-white/50">
             <li className="flex items-start gap-3">
               <span className="text-brand-cyan mt-0.5">📍</span>
-              <span>Rua Emilio Dias Brandão, nº 257<br />Bairro Santa Izabel – Campo Grande, MS</span>
+              <span>Rua Emilio Dias Brandão, nº 257<br />Bairro Santa Izabel – Ponta Porã, MS</span>
             </li>
             <li className="flex items-center gap-3">
               <span className="text-brand-cyan">📞</span>

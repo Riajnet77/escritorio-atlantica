@@ -26,7 +26,7 @@ export default function Sobre() {
             <p className="font-body text-white/60 leading-relaxed mb-5">
               Fundado em <strong className="text-white">27 de junho de 1986</strong>, o Escritório Atlântica nasceu
               com a missão de oferecer serviços contábeis de excelência para empresas e pessoas físicas
-              em Campo Grande e região.
+              em Ponta Porã e região.
             </p>
             <p className="font-body text-white/60 leading-relaxed mb-5">
               Ao longo de mais de 38 anos, construímos uma reputação sólida baseada em ética,
@@ -44,7 +44,7 @@ export default function Sobre() {
           {/* Timeline */}
           <div className="relative pl-8 border-l border-brand-cyan/20">
             {[
-              { ano: '1986', t: 'Fundação',            d: 'Abertura do Escritório Atlântica em Campo Grande, MS.' },
+              { ano: '1986', t: 'Fundação',            d: 'Abertura do Escritório Atlântica em Ponta Porã, MS.' },
               { ano: '1990', t: 'Expansão',             d: 'Ampliação dos serviços para atender médias empresas.' },
               { ano: '2000', t: 'Modernização',         d: 'Adoção de sistemas digitais e contabilidade eletrônica.' },
               { ano: '2010', t: 'Crescimento',          d: 'Consolidação como referência no mercado local.' },
@@ -91,7 +91,7 @@ export default function Sobre() {
               { l: 'CNPJ',      v: '01.940.725/0001-22' },
               { l: 'CRC/MS',    v: '00239/0-0' },
               { l: 'Fundação',  v: '27/06/1986' },
-              { l: 'Cidade',    v: 'Campo Grande, MS' },
+              { l: 'Cidade',    v: 'Ponta Porã, MS' },
             ].map(({ l, v }) => (
               <div key={l}>
                 <div className="font-body text-xs text-brand-cyan uppercase tracking-widest mb-1">{l}</div>
