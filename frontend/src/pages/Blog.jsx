@@ -15,7 +15,7 @@ export default function Blog() {
     <>
       <Helmet><title>Blog | Escritório Atlântica</title></Helmet>
 
-      <section className="section-dark pt-36 pb-20 bg-dots">
+      <section style={{background: "linear-gradient(135deg, #060e1e 0%, #0f2045 60%, #1a3a70 100%)"}} className="pt-36 pb-20 bg-dots">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="cyan-line mx-auto" />
           <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-4">Blog & Artigos</h1>
@@ -23,7 +23,7 @@ export default function Blog() {
         </div>
       </section>
 
-      <section className="section-mid py-24 bg-grid">
+      <section style={{background: "linear-gradient(180deg, #0a1630 0%, #0f2045 100%)"}} className="py-24 bg-grid">
         <div className="max-w-7xl mx-auto px-6">
           {loading ? (
             <div className="text-center text-white/40 py-20">Carregando artigos...</div>

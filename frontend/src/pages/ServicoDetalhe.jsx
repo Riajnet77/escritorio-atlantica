@@ -16,12 +16,12 @@ export default function ServicoDetalhe() {
   }, [slug])
 
   if (loading) return (
-    <div className="section-dark min-h-screen pt-40 text-center">
+    <div className="min-h-screen pt-40 text-center">
       <div className="text-white/40">Carregando...</div>
     </div>
   )
   if (!servico) return (
-    <div className="section-dark min-h-screen pt-40 text-center">
+    <div className="min-h-screen pt-40 text-center">
       <p className="text-white/50 mb-6">Serviço não encontrado.</p>
       <Link to="/servicos" className="btn-outline">← Voltar</Link>
     </div>
@@ -31,7 +31,7 @@ export default function ServicoDetalhe() {
     <>
       <Helmet><title>{servico.titulo} | Escritório Atlântica</title></Helmet>
 
-      <section className="section-dark pt-36 pb-16 bg-dots">
+      <section style={{background: "linear-gradient(135deg, #060e1e 0%, #0f2045 60%, #1a3a70 100%)"}} className="pt-36 pb-16 bg-dots">
         <div className="max-w-4xl mx-auto px-6">
           <Link to="/servicos" className="text-brand-cyan/60 text-sm hover:text-brand-cyan mb-6 inline-flex items-center gap-2">
             ← Todos os Serviços
@@ -42,7 +42,7 @@ export default function ServicoDetalhe() {
         </div>
       </section>
 
-      <section className="section-mid py-16">
+      <section style={{background: "linear-gradient(180deg, #0a1630 0%, #0f2045 100%)"}} className="py-16">
         <div className="max-w-4xl mx-auto px-6">
           <div className="font-body text-white/70 leading-relaxed whitespace-pre-wrap text-lg mb-12">
             {servico.descricao_completa}

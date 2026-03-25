@@ -33,7 +33,7 @@ export default function Home() {
       </Helmet>
 
       {/* ══ HERO ══════════════════════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-center overflow-hidden section-dark bg-dots">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-dots" style={{background: 'linear-gradient(135deg, #060e1e 0%, #0f2045 60%, #1a3a70 100%)'}}>
         {/* Orbs decorativos */}
         <div className="absolute top-1/4 right-0 w-[600px] h-[600px] rounded-full opacity-10"
           style={{ background: 'radial-gradient(circle, #2a5298 0%, transparent 70%)' }} />
@@ -128,7 +128,7 @@ export default function Home() {
       </section>
 
       {/* ══ SERVIÇOS ══════════════════════════════════════════════════════ */}
-      <section className="section-mid py-24 bg-grid">
+      <section className="py-24 bg-grid" style={{background: 'linear-gradient(180deg, #0a1630 0%, #0f2045 100%)'}}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
             <div className="cyan-line mx-auto" />
@@ -159,7 +159,7 @@ export default function Home() {
       </section>
 
       {/* ══ POR QUE NÓS ═══════════════════════════════════════════════════ */}
-      <section className="section-dark py-24">
+      <section className="py-24" style={{background: 'linear-gradient(135deg, #060e1e 0%, #0f2045 60%, #1a3a70 100%)'}}>
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <div className="cyan-line" />
@@ -208,7 +208,7 @@ export default function Home() {
 
       {/* ══ BLOG ══════════════════════════════════════════════════════════ */}
       {posts.length > 0 && (
-        <section className="section-mid py-24">
+        <section className="py-24" style={{background: 'linear-gradient(180deg, #0a1630 0%, #0f2045 100%)'}}>
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-14">
               <div className="cyan-line mx-auto" />

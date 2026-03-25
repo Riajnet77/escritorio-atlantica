@@ -12,9 +12,9 @@ export default function PostDetalhe() {
     getPost(slug).then(r => setPost(r.data)).catch(() => {}).finally(() => setLoading(false))
   }, [slug])
 
-  if (loading) return <div className="section-dark min-h-screen pt-40 text-center text-white/40">Carregando...</div>
+  if (loading) return <div className="min-h-screen pt-40 text-center text-white/40">Carregando...</div>
   if (!post) return (
-    <div className="section-dark min-h-screen pt-40 text-center">
+    <div className="min-h-screen pt-40 text-center">
       <p className="text-white/50 mb-6">Artigo não encontrado.</p>
       <Link to="/blog" className="btn-outline">← Voltar ao Blog</Link>
     </div>
@@ -24,7 +24,7 @@ export default function PostDetalhe() {
     <>
       <Helmet><title>{post.titulo} | Escritório Atlântica</title></Helmet>
 
-      <section className="section-dark pt-36 pb-16 bg-dots">
+      <section style={{background: "linear-gradient(135deg, #060e1e 0%, #0f2045 60%, #1a3a70 100%)"}} className="pt-36 pb-16 bg-dots">
         <div className="max-w-3xl mx-auto px-6">
           <Link to="/blog" className="text-brand-cyan/60 text-sm hover:text-brand-cyan mb-6 inline-block">← Voltar ao Blog</Link>
           <div className="flex gap-2 mb-4 flex-wrap">
@@ -40,7 +40,7 @@ export default function PostDetalhe() {
         </div>
       </section>
 
-      <section className="section-mid py-16">
+      <section style={{background: "linear-gradient(180deg, #0a1630 0%, #0f2045 100%)"}} className="py-16">
         <div className="max-w-3xl mx-auto px-6">
           <p className="font-body text-brand-cyan/80 text-lg italic border-l-2 border-brand-cyan/40 pl-5 mb-10">
             {post.resumo}

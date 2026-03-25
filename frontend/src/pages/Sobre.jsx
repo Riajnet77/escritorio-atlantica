@@ -9,7 +9,7 @@ export default function Sobre() {
       </Helmet>
 
       {/* Hero */}
-      <section className="section-dark pt-36 pb-20 bg-dots">
+      <section style={{background: "linear-gradient(135deg, #060e1e 0%, #0f2045 60%, #1a3a70 100%)"}} className="pt-36 pb-20 bg-dots">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="cyan-line mx-auto" />
           <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-4">Sobre Nós</h1>
@@ -18,7 +18,7 @@ export default function Sobre() {
       </section>
 
       {/* História */}
-      <section className="section-mid py-24">
+      <section style={{background: "linear-gradient(180deg, #0a1630 0%, #0f2045 100%)"}} className="py-24">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <div className="cyan-line" />
@@ -62,7 +62,7 @@ export default function Sobre() {
       </section>
 
       {/* Valores */}
-      <section className="section-dark py-20 bg-grid">
+      <section style={{background: "linear-gradient(180deg, #0a1630 0%, #0f2045 100%)"}} className="py-20 bg-grid">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <div className="cyan-line mx-auto" />
           <h2 className="heading-section">Nossos Valores</h2>
@@ -84,7 +84,7 @@ export default function Sobre() {
       </section>
 
       {/* Dados legais */}
-      <section className="section-mid py-16">
+      <section style={{background: "linear-gradient(180deg, #0a1630 0%, #0f2045 100%)"}} className="py-16">
         <div className="max-w-4xl mx-auto px-6">
           <div className="bg-white/5 border border-white/10 rounded-2xl p-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[

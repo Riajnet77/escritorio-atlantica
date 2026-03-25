@@ -55,7 +55,7 @@ export default function Contato() {
     <>
       <Helmet><title>Contato | Escritório Atlântica</title></Helmet>
 
-      <section className="section-dark pt-36 pb-20 bg-dots">
+      <section style={{background: "linear-gradient(135deg, #060e1e 0%, #0f2045 60%, #1a3a70 100%)"}} className="pt-36 pb-20 bg-dots">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="cyan-line mx-auto" />
           <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-4">Fale Conosco</h1>
@@ -63,7 +63,7 @@ export default function Contato() {
         </div>
       </section>
 
-      <section className="section-mid py-20">
+      <section style={{background: "linear-gradient(180deg, #0a1630 0%, #0f2045 100%)"}} className="py-20">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-14">
 
           {/* Info */}
